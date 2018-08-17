@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError,tap} from 'rxjs/operators';
-import { ApiService } from './api.service'
+import { SessionService } from './session.service'
 
 @Injectable()
 export class MyHttpInterceptor implements HttpInterceptor {
-constructor(private apiService: ApiService) { }
+
+constructor(private SessionService: SessionService) { }
+
 
 intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    	// modify request
+        // modify request
+        
 	    request = request.clone({
 	      setHeaders: {
-	        Authorization: `token=[token]`
+	        Authorization: `${this.SessionService.token$}`
 	      }
         });
         
