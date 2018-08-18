@@ -5,6 +5,11 @@
     <input class="o-form-control o-form-control--input" type="text" formControlName="phone" />
   </div>
 
+  <div class="c-form-item c-auth-form__item c-auth-form__item--big">
+    <div class="c-form-item__label">Custom form control</div>
+    <mls-custom-phone-number-control formControlName="customPhone"></mls-custom-phone-number-control>
+  </div>
+
   <button class="o-button c-auth-form__button" type="submit" [disabled]="form.invalid">NEXT</button>
 
 </form>

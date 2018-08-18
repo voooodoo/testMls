@@ -17,12 +17,13 @@ import { validateConfig } from '@angular/router/src/config';
 export class LogInFormComponent {
 
   public form: FormGroup = this.fb.group({
-    phone: [
-      '',
+    phone: ['',
       [Validators.required,
+        this.isValidPhone
+      ]],
+    customPhone: ['', [Validators.required,
       this.isValidPhone
-      ]
-    ],
+    ]]
   });
 
   constructor(

@@ -9,6 +9,7 @@ import { LogInFormComponent } from './log-in-form/log-in-form.component';
 import { PhoneVerificationFormComponent } from './phone-verification-form/phone-verification-form.component';
 
 import { AuthRoutingModule } from './auth-routing.module';
+import { CustomPhoneNumberControlComponent } from './log-in-form/custom-phone-number-control/custom-phone-number-control.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AuthRoutingModule } from './auth-routing.module';
   declarations: [
     AuthPageComponent,
     LogInFormComponent,
-    PhoneVerificationFormComponent
+    PhoneVerificationFormComponent,
+    CustomPhoneNumberControlComponent
   ]
 })
 export class AuthModule {}
